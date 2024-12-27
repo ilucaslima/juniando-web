@@ -1,6 +1,7 @@
 import Card from "@/components/card";
+import HeroCard from "@/components/hero-card";
 import HeroSection from "@/components/hero-section";
-
+import exampleCard from "@/assets/example-card.png";
 // MOCK
 const maisVisualizados = [
   {
@@ -119,6 +120,13 @@ const ultimosPosts = [
 export default function Home() {
   return (
     <div className="max-w-5xl m-auto flex flex-col">
+      <HeroCard
+        author="Lucas Lima"
+        isFeatured
+        title="Porque e pra que usar Reactjs?"
+        date={new Date("2024-12-25")}
+        image={exampleCard}
+      />
       <HeroSection title="Mais Visualizados">
         {maisVisualizados.map((item, index) => (
           <Card key={index} {...item} />
